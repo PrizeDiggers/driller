@@ -1,0 +1,8 @@
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\Weibo.dll
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\Weibo.pdb
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\NetDimension.Weibo.dll
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\NetDimension.Weibo.pdb
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\NetDimension.Weibo.xml
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.csprojResolveAssemblyReference.cache
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.dll
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.pdb
