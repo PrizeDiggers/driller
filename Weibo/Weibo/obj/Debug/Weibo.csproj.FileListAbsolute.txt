@@ -6,3 +6,5 @@ C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\NetDimension.Weibo.xml
 C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.csprojResolveAssemblyReference.cache
 C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.dll
 C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\obj\Debug\Weibo.pdb
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\Newtonsoft.Json.pdb
+C:\Users\Jacky\Documents\GitHub\driller\Weibo\Weibo\bin\Newtonsoft.Json.xml

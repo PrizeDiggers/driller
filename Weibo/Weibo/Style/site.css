@@ -1,0 +1,10 @@
+﻿body, div, p, ol, ul, li, table, th, tr, td
+{
+    font-family: Arial;
+    font-size: 14px;
+    color: #0c0c0c;
+}
+.details
+{
+    float: right;
+}

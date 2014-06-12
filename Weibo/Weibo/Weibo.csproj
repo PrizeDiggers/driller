@@ -37,6 +37,10 @@
     <Reference Include="NetDimension.Weibo">
       <HintPath>..\..\..\..\..\Downloads\NET40\NetDimension.Weibo.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\Json60r3\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -56,7 +60,9 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Style\style.css" />
+    <Content Include="Script\jquery-2.1.1.js" />
+    <Content Include="Style\login.css" />
+    <Content Include="Style\site.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -92,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Script\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

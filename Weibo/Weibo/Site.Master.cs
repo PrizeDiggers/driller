@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NetDimension.Weibo;
+using NetDimension.Weibo.Entities;
+using NetDimension.Weibo.Interface;
+using Weibo.Utilities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net;
 
 namespace Weibo
 {
@@ -15,6 +22,13 @@ namespace Weibo
             {
                 if (Session["oauth"] == null)
                     Response.Redirect("Login.aspx");
+                var oauth = (OAuth)Session["oauth"];
+                var Sina = new NetDimension.Weibo.Client(oauth);
+                var uid = Sina.API.Entity.Account.GetUID();
+                string UserDetails = Sina.API.Entity.Users.Show(uid).ToString();
+                WebClient c = new WebClient();
+                JObject o = JObject.Parse(UserDetails);
+                lblName.Text = "Welcome back - " + o["screen_name"].ToString();
             }
         }
     }
