@@ -1,10 +1,22 @@
-﻿body, div, p, ol, ul, li, table, th, tr, td
+﻿body, div, ol, ul, li, table, th, tr, td
 {
     font-family: Arial;
     font-size: 14px;
     color: #0c0c0c;
+    margin: 0px;
+    padding: 0px;
 }
 .details
 {
-    float: right;
+    background-color: Black;
+    color: White;
+    padding: 5px;
+    text-align: right;
+}
+p
+{
+    font-family: Arial;
+    font-size: 14px;
+    color: #0c0c0c;
+    padding: 5px;
 }
