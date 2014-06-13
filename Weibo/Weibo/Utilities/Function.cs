@@ -19,5 +19,10 @@ namespace Weibo.Utilities
             return oauth.ClientLogin(Account, password);
         }
 
+        public static Client GetSina(OAuth oauth)
+        {
+            return new NetDimension.Weibo.Client(oauth);
+        }
+
     }
 }

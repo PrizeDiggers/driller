@@ -26,19 +26,16 @@ namespace Weibo
                 else
                 {
                     BindList();
+                    BindFriends();
                 }
             }
         }
 
         public string LoadUserInfo()
         {
-            OAuth oauth = (OAuth)Session["oauth"];
-            Client Sina = new NetDimension.Weibo.Client(oauth);
-            var uid = Sina.API.Entity.Account.GetUID();
-            string UserDetails = Sina.API.Entity.Users.Show(uid).ToString();
-            //WebClient c = new WebClient();
-            //JObject o = JObject.Parse(UserDetails);
-            //lblName.Text = "Welcome back - " + o["screen_name"].ToString();
+
+            var uid = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Account.GetUID();
+            string UserDetails = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Users.Show(uid).ToString();
             return string.Format("{0}", UserDetails);
         }
         protected void btnSend_Click(object sender, EventArgs e)
@@ -70,9 +67,8 @@ namespace Weibo
 
         public void BindList()
         {
-            OAuth oauth = (OAuth)Session["oauth"];
-            Client Sina = new NetDimension.Weibo.Client(oauth);
-            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Sina.API.Entity.Suggestions.HotUsers(HotUserCatagory.@default);
+
+            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Suggestions.HotUsers(HotUserCatagory.@default);
 
             List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
 
@@ -81,7 +77,7 @@ namespace Weibo
             {
                 ds.Add(x);
                 if (++count == 3)
-                    break;
+                    break; //Return 3 Users
             }
 
             rtpFamous.DataSource = ds;
@@ -91,13 +87,10 @@ namespace Weibo
 
         public void BindFriends()
         {
-
-            OAuth oauth = (OAuth)Session["oauth"];
-            Client Sina = new NetDimension.Weibo.Client(oauth);
-            var uid = Sina.API.Entity.Account.GetUID();
-            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Sina.API.Entity.Friendships.Friends(uid).Users;
+            var uid = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Account.GetUID();
+            NetDimension.Weibo.Entities.user.Entity user = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Users.Show(uid);
+            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Friendships.Friends(uid, "", Convert.ToInt32(user.FriendsCount)).Users;
             List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
-
             foreach (NetDimension.Weibo.Entities.user.Entity x in json)
             {
                 ds.Add(x);
