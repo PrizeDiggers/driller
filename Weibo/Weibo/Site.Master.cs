@@ -23,6 +23,8 @@ namespace Weibo
             {
                 if (Session["oauth"] == null)
                     Response.Redirect("Login.aspx");
+                else
+                    BindList();
             }
         }
 
@@ -62,6 +64,27 @@ namespace Weibo
             }
 
             Response.Redirect("Default.aspx");
+        }
+
+        public void BindList()
+        {
+            OAuth oauth = (OAuth)Session["oauth"];
+            Client Sina = new NetDimension.Weibo.Client(oauth);
+            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Sina.API.Entity.Suggestions.HotUsers(HotUserCatagory.@default);
+
+            List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
+
+            int count = 0;
+            foreach (NetDimension.Weibo.Entities.user.Entity x in json)
+            {
+                ds.Add(x);
+                if (++count == 3)
+                    break;
+            }
+
+            rtpFamous.DataSource = ds;
+            rtpFamous.DataBind();
+
         }
     }
 }
