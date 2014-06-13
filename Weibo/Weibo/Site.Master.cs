@@ -22,13 +22,16 @@ namespace Weibo
             {
                 if (Session["oauth"] == null)
                     Response.Redirect("Login.aspx");
-                var oauth = (OAuth)Session["oauth"];
-                var Sina = new NetDimension.Weibo.Client(oauth);
-                var uid = Sina.API.Entity.Account.GetUID();
-                string UserDetails = Sina.API.Entity.Users.Show(uid).ToString();
-                WebClient c = new WebClient();
-                JObject o = JObject.Parse(UserDetails);
-                lblName.Text = "Welcome back - " + o["screen_name"].ToString();
+                else
+                {
+                    var oauth = (OAuth)Session["oauth"];
+                    var Sina = new NetDimension.Weibo.Client(oauth);
+                    var uid = Sina.API.Entity.Account.GetUID();
+                    string UserDetails = Sina.API.Entity.Users.Show(uid).ToString();
+                    WebClient c = new WebClient();
+                    JObject o = JObject.Parse(UserDetails);
+                    lblName.Text = "Welcome back - " + o["screen_name"].ToString();
+                }
             }
         }
     }
