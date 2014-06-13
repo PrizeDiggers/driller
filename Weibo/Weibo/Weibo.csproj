@@ -59,10 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Images\upload.png" />
     <Content Include="Login.aspx" />
     <Content Include="Script\jquery-2.1.1.js" />
     <Content Include="Style\login.css" />
     <Content Include="Style\site.css" />
+    <Content Include="Style\stylesheet.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -96,9 +98,7 @@
     </Compile>
     <Compile Include="Utilities\Function.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Site.Master" />
   </ItemGroup>
