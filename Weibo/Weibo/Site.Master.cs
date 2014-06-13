@@ -24,7 +24,9 @@ namespace Weibo
                 if (Session["oauth"] == null)
                     Response.Redirect("Login.aspx");
                 else
+                {
                     BindList();
+                }
             }
         }
 
@@ -85,6 +87,21 @@ namespace Weibo
             rtpFamous.DataSource = ds;
             rtpFamous.DataBind();
 
+        }
+
+        public void BindFriends()
+        {
+
+            OAuth oauth = (OAuth)Session["oauth"];
+            Client Sina = new NetDimension.Weibo.Client(oauth);
+            var uid = Sina.API.Entity.Account.GetUID();
+            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Sina.API.Entity.Friendships.Friends(uid).Users;
+            List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
+
+            foreach (NetDimension.Weibo.Entities.user.Entity x in json)
+            {
+                ds.Add(x);
+            }
         }
     }
 }

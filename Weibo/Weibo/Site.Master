@@ -32,13 +32,13 @@
                 </a>
             </div>
             <div class="status-box row">
-                <a href="#"><span id="user-statuses-count">1</span>
+                <a href="#" class="middle"><span id="user-follow-count">1</span>
                     <br />
-                    微博 </a><a href="#" class="middle"><span id="user-follow-count">1</span>
+                    正在关注 </a><a href="#"><span id="user-follower-count">1</span>
                         <br />
-                        正在关注 </a><a href="#"><span id="user-follower-count">1</span>
+                        粉丝 </a><a href="#"><span id="user-statuses-count">1</span>
                             <br />
-                            粉丝 </a>
+                            微博 </a>
             </div>
             <div id="status-box" class="box">
                 <asp:TextBox runat="server" ID="txtStatusBody" CssClass="status-box-editor" TextMode="MultiLine"></asp:TextBox>
