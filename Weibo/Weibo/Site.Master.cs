@@ -27,6 +27,7 @@ namespace Weibo
                 {
                     BindList();
                     BindFriends();
+                    BindFollowers();
                 }
             }
         }
@@ -90,6 +91,18 @@ namespace Weibo
             var uid = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Account.GetUID();
             NetDimension.Weibo.Entities.user.Entity user = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Users.Show(uid);
             IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Friendships.Friends(uid, "", Convert.ToInt32(user.FriendsCount)).Users;
+            List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
+            foreach (NetDimension.Weibo.Entities.user.Entity x in json)
+            {
+                ds.Add(x);
+            }
+        }
+
+        public void BindFollowers()
+        {
+            var uid = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Account.GetUID();
+            NetDimension.Weibo.Entities.user.Entity user = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Users.Show(uid);
+            IEnumerable<NetDimension.Weibo.Entities.user.Entity> json = Function.GetSina((OAuth)Session["oauth"]).API.Entity.Friendships.Followers(uid, "", Convert.ToInt32(user.FriendsCount)).Users;
             List<NetDimension.Weibo.Entities.user.Entity> ds = new List<NetDimension.Weibo.Entities.user.Entity>();
             foreach (NetDimension.Weibo.Entities.user.Entity x in json)
             {
