@@ -61,10 +61,15 @@
     <Content Include="Default.aspx" />
     <Content Include="Images\upload.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Script\bootstrap.js" />
+    <Content Include="Script\bootstrap.min.js" />
     <Content Include="Script\jquery-2.1.1.js" />
+    <Content Include="Style\bootstrap-theme.css" />
+    <Content Include="Style\bootstrap-theme.min.css" />
+    <Content Include="Style\bootstrap.css" />
+    <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\login.css" />
     <Content Include="Style\site.css" />
-    <Content Include="Style\stylesheet.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,8 +102,12 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Function.cs" />
+    <Compile Include="Utilities\SiteClass.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Style\bootstrap-theme.css.map" />
+    <None Include="Style\bootstrap.css.map" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
   </ItemGroup>

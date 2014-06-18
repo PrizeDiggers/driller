@@ -25,7 +25,7 @@
                 <asp:Button ID="btnlogin" runat="server" Text="Login" OnClick="btnlogin_OnClick">
                 </asp:Button></p>
             <p class="remember_me">
-                <asp:Label ID="lblMessage" runat="server" Visible="false"></asp:Label>
+                <asp:Label ID="lblMessage" runat="server" Visible="true"></asp:Label>
             </p>
         </div>
     </div>
